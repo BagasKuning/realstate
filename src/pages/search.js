@@ -29,10 +29,10 @@ const Search = ( {properties} ) => {
                 <Icon paddingLeft={'2'} w='7' as={BsFilter} />
             </Flex>
             {searchfilter && <SearchFilters />}
-            <Text fontSize={'2xl'} p='4' fontWeight={'bold'}>
+            <Text fontSize={'2xl'} p={{base: 4, xl: 4, lg: '16px 60px'}} fontWeight={'bold'} textAlign={{base: 'center', md: 'center', lg: 'start', xl: 'start'}}>
                 Properties {router.query.purpose}
             </Text>
-            <Flex flexWrap={'wrap'}>
+            <Flex flexWrap={'wrap'} justifyContent='space-evenly'>
                 {properties.map((property) => <Property key={property.id} property={property} />)}
             </Flex>
             {properties.length === 0 && (

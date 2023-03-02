@@ -17,14 +17,14 @@ const Banner = ({purpose, imageUrl, title1, title2, desc1, desc2, buttonText, li
   return(
   <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
     <Image src={imageUrl} width={500} height={300} alt="banner" />
-    <Box p='5'>
+    <Flex p='5' flexDirection={'column'} textAlign={{base: 'center', lg: 'start'}}>
       <Text color='gray.500' fontSize='sm' fontWeight='medium'>{purpose}</Text>
       <Text fontSize='3x1' fontWeight='bold'>{title1} <br/> {title2}</Text>
       <Text fontSize='lg' paddingTop='3' paddingBottom='3' color='gray.300'>{desc1} <br/> {desc2}</Text>
-    </Box>
     <Button fontSize='xl'>
       <Link href={linkName}>{buttonText}</Link>
     </Button>
+    </Flex>
   </Flex>
   )
 }
@@ -45,7 +45,7 @@ export default function Home({propertyForSale, propertyForRent}) {
         linkName='/search?purpose=for-rent'
         imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4'
         />
-        <Flex flexWrap='wrap'>
+        <Flex flexWrap='wrap' justifyContent={'space-evenly'}>
           {propertyForRent.map((property) => <Property property={property} key={property.id} />)}
         </Flex>
         <Banner 
@@ -58,7 +58,7 @@ export default function Home({propertyForSale, propertyForRent}) {
         linkName='/search?purpose=for-sale'
         imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/198256719/026fc4b608df413ab7d6fe8842c858f5'
         />
-        <Flex flexWrap='wrap'>
+        <Flex flexWrap='wrap' justifyContent={'space-evenly'}>
           {propertyForSale.map((property) => <Property property={property} key={property.id} />)}
         </Flex>
         
