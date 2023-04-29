@@ -7,7 +7,7 @@ import { Flex, Box, Text, Button } from '@chakra-ui/react'
 import { baseUrl, fetchApi } from 'utils/fetchApi'
 
 import Property from '../../components/Property'
-
+import Header from 'components/Header';
 
 
 
@@ -34,6 +34,7 @@ export default function Home({propertyForSale, propertyForRent}) {
   
   return (
       <Box>
+        <Header/>
 
         <Banner 
         purpose='RENT A HOME'
