@@ -7,6 +7,8 @@
 
 
 
+
+
 // component header
 .header-bg{
     background: url(../../assets/images/bg.jpg);
@@ -16,11 +18,63 @@
     width: 50%;
     height: 100%;
   }
-  .header-title{
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-transform: capitalize;
-    span{
-        color: rgb(15, 39, 146);
+  .header-title-container{
+    padding: 50px;
+    .header-title{
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: capitalize;
+      span{
+          color: rgb(15, 39, 146);
+      }
+    }
+  }
+
+
+
+
+
+  //md responsive
+  @media only screen and (max-width: 768px) {
+    .header-title-container{
+      padding: 20px;
+      
+      .header-desc{
+        font-size: .8rem;
+      }
+      .header-title{
+        font-size: 2rem;
+        span{
+          color: rgb(15, 39, 146);
+        }
+      }
+      
+    }
+  }
+
+
+
+  
+  
+  
+  
+  @media only screen and (max-width: 345px){
+    .header-bg{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
+    }
+    .header-title-container{
+      width: auto;
+      height: 100%;
+      z-index: 9;
+      background-color: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(10px); /* memberikan efek blur pada background dengan radius 10px */
+      text-align: center;
+      .header-title{
+        color: white;
+        font-size: 1.6rem;
+      }
     }
   }

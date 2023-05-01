@@ -6,19 +6,19 @@ import { FiKey } from "react-icons/fi"
 
 const Navbar = () => (
         <Flex p='2' m={{
-            base: '0 60px',
-            md: '0 60px',
+            base: '0 30px',
+            md: '0 40px',
             lg: '0 40',
             xl: '0'
         }} borderBottom='1px' borderColor='gray.100' justifyContent={'space-around'}>
-            <Box fontSize='3xl' color='blue.400' fontWeight='bold'>
+            <Box fontSize={{ base: '2xl', sm: '3xl'}} color='blue.400' fontWeight='bold'>
                 <Link href='/' paddingLeft="2" >Realtor</Link>
             </Box>
             <Spacer />
             <Box>
                 <Menu color='black'>
                     <MenuButton as={IconButton} icon={<FcMenu />} variant='outlined' color='red.400' />
-                    <MenuList>
+                    <MenuList zIndex='99999'>
                         <Link href='/' passHref>
                             <MenuItem icon={<FcHome />}>Home</MenuItem>
                         </Link>
